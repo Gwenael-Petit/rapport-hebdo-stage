@@ -29,7 +29,8 @@
  * Le produit TOM est assez complexe et concerne un domaine pour lequel j'ai en core peu de connaissances (la finance). J'ai donc passé une partie de mon temps à lire de la documentation pour comprendre son fonctionnement et son utilité
 
 
- <h3> Programme pour la semaine prochaine:
+ <h3> Programme pour la semaine prochaine:</h3>
+
 
 #### Détail Mission:
 
