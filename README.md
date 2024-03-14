@@ -10,12 +10,14 @@
 
 
  <h3> Ce que j'ai fait:</h3>
+
  * Le lundi et mardi matin ont été consacrés à la configuration du poste de travail. J'ai dû installer et configurer des logiciels tels que Putty, MySQL Workbench et Eclipse. J'ai aussi pu prendre en main des outils utilisés par l'entreprise, comme Confluence et Jira.
  * Durant les premiers jours, l'objectif était pour moi de comprendre le fonctionnement et la caractéristique du produit TOM (Trade Order Managment) sur lequel je vais travailler. J'ai pour cela lu la documentation sur le projet, et le Product Manager m'a fait une présentation détaillée du produit ainsi que de l'organisation de l'entreprise pour ce projet.
  * À partir de mercredi, j'ai pu commencer à travailler sur ma première mission, qui consiste à mettre à jour un service permettant d'afficher l'état des services sur un serveur. Voir [détail mission](#détail-mission).\
  Cette mission m'a permis de prendre en main OPS, un outil interne de **Worldline** qui permet de configurer et de dépolyer des services sur des serveurs.
 
  <h3> Ce que j'ai appris:</h3>
+
  * J'ai découvert plus en détail le fonctionnement d'une équipe informatique au sein d'une entreprise de cette envergure. Le projet rassemble plusieurs équipes, chacune comprenant un certain nombre de collaborateurs, ce qui nécessite une communication efficace, prenant ainsi plus de temps que je ne l'imaginais dans le travail d'un développeur.
 
  * J'ai appris à configurer et déployer un service avec OPS et découvert comment l'entreprise utilise gitlab pour ses déploiements.
@@ -23,6 +25,7 @@
  * Cette semaine était une semaine d'adaptation et au delà des compétences techniques, l'apprentissage concernait surtout la prise en main de l'environnement de travail et l'adapation à l'entreprise. J'ai par exemple participé à des réunions journalière avec mon équipe pour partager nos avancées.
 
  <h3> Difficultés rencontrés:</h3>
+ 
  * Le produit TOM est assez complexe et concerne un domaine pour lequel j'ai en core peu de connaissances (la finance). J'ai donc passé une partie de mon temps à lire de la documentation pour comprendre son fonctionnement et son utilité
 
 
