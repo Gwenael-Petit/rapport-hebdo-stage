@@ -69,8 +69,11 @@ Entuite, on définie notre configuration en se basant sur le template de la conf
 Configuration:
 ![](./images/config_ops_monitoring_test.png)
 
-##### conclusion
+#### conclusion
 Une fois le déploiment terminé, on peut essayer la commande qui donne le résultat suivant.  
 
 ![](./images/cop_stat_serv_result.PNG)  
+
+Un service d'envoi de mails utilise celui que l'on vient de mettre à jour, il faut donc vérifier qu'il fonctionne toujours (c'est le cas).
+
 On déploie ensuite sur tous les serveurs et la mission est terminée.
