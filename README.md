@@ -70,6 +70,7 @@ Configuration:
 ![](./images/config_ops_monitoring_test.png)
 
 ##### conclusion
-Une fois le déploiment terminé, on peut essayer la commande qui donne le résultat suivant.
-![](./images/cop_stat_serv_result.PNG)
+Une fois le déploiment terminé, on peut essayer la commande qui donne le résultat suivant.  
+
+![](./images/cop_stat_serv_result.PNG)  
 On déploie ensuite sur tous les serveurs et la mission est terminée.
