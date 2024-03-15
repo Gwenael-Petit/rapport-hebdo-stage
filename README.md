@@ -26,8 +26,9 @@
 
  <h3> Difficultés rencontrés:</h3>
  
- * Le produit TOM est assez complexe et concerne un domaine pour lequel j'ai en core peu de connaissances (la finance). J'ai donc passé une partie de mon temps à lire de la documentation pour comprendre son fonctionnement et son utilité
+ * Le produit TOM est assez complexe et concerne un domaine pour lequel j'ai en core peu de connaissances (la finance). J'ai donc passé une partie de mon temps à lire de la documentation pour comprendre son fonctionnement et son utilité.
 
+ * Il m'a fallu un peu de temps pour comprendre comment le déploiment fonctionnait, en effet, lors du premier déploiment, j'ai eu différents problème concernant les chemins d'accès, que j'avais mal configuré.
 
  <h3> Programme pour la semaine prochaine:</h3>
 
@@ -62,11 +63,13 @@ sed -i "s/^r/cop_r/g" utils
 
 ##### 3.
 La configuration du service sur OPS est la partie la plus complexe, puisque je n'avais jamais utilisé OPS avant.
-Il faut donc ajouter une ressource dans le module `"Monitoring"`, qu'on appelle `"monitoring-test"`, puis aojuter les serveurs sur lesquels on souhaite la déployer.
+Il faut donc ajouter une ressource dans le module `"Monitoring"`, qu'on appelle `"monitoring-test"`, puis ajouter les serveurs sur lesquels on souhaite la déployer.
 Entuite, on définie notre configuration en se basant sur le template de la configuration faite par l'équipe qui a développé les scripts utilisés puis on adapte les variables. 
 
 Configuration:
 ![](./images/config_ops_monitoring_test.png)
 
 ##### conclusion
+Une fois le déploiment terminé, on peut essayer la commande qui donne le résultat suivant.
 ![](./images/cop_stat_serv_result.PNG)
+On déploie ensuite sur tous les serveurs et la mission est terminée.
