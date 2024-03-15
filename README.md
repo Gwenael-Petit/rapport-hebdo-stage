@@ -4,7 +4,7 @@
  Prénom: **Gwénaël**
 
  Entreprise: **WorldLine** \
- Résumé de la mission: Petite mission pour prendre en main l'environnement de travail: mettre à jour un petit script permettant de d'afficher l'état des différents processus sur un serveur.
+ Résumé de la mission: Petite mission pour prendre en main l'environnement de travail: mettre à jour un petit script permettant d'afficher l'état des différents processus sur un serveur.
 
  <h2>Semaine du 11/03 au 15/03</h2>
 
@@ -12,9 +12,9 @@
  <h3> Ce que j'ai fait:</h3>
 
  * Le lundi et mardi matin ont été consacrés à la configuration du poste de travail. J'ai dû installer et configurer des logiciels tels que Putty, MySQL Workbench et Eclipse. J'ai aussi pu prendre en main des outils utilisés par l'entreprise, comme Confluence et Jira.
- * Durant les premiers jours, l'objectif était pour moi de comprendre le fonctionnement et la caractéristique du produit TOM (Trade Order Managment) sur lequel je vais travailler. J'ai pour cela lu la documentation sur le projet, et le Product Manager m'a fait une présentation détaillée du produit ainsi que de l'organisation de l'entreprise pour ce projet.
+ * Durant les premiers jours, l'objectif était pour moi de comprendre le fonctionnement et la caractéristique du produit TOM (Trade Order Managment) sur lequel je vais travailler. J'ai pour cela lu de la documentation sur le projet, et le Product Manager m'a fait une présentation détaillée du produit ainsi que de l'organisation de l'entreprise pour ce projet.
  * À partir de mercredi, j'ai pu commencer à travailler sur ma première mission, qui consiste à mettre à jour un service permettant d'afficher l'état des services sur un serveur. Voir [détail mission](#détail-mission).\
- Cette mission m'a permis de prendre en main OPS, un outil interne de **Worldline** qui permet de configurer et de dépolyer des services sur des serveurs.
+ Cette mission m'a permis de prendre en main OPS, un outil interne de **Worldline** qui permet de configurer et de déployer des services sur des serveurs.
 
  <h3> Ce que j'ai appris:</h3>
 
@@ -22,7 +22,7 @@
 
  * J'ai appris à configurer et déployer un service avec OPS et découvert comment l'entreprise utilise gitlab pour ses déploiements.
 
- * Cette semaine était une semaine d'adaptation et au delà des compétences techniques, l'apprentissage concernait surtout la prise en main de l'environnement de travail et l'adapation à l'entreprise. J'ai par exemple participé à des réunions journalière avec mon équipe pour partager nos avancées.
+ * Cette semaine était une semaine d'adaptation et au delà des compétences techniques, l'apprentissage concernait surtout la prise en main de l'environnement de travail et l'adapation à l'entreprise. J'ai par exemple participé à des réunions journalières avec mon équipe pour partager nos avancées.
 
  <h3> Difficultés rencontrés:</h3>
  
