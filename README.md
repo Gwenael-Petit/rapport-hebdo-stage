@@ -4,15 +4,14 @@
  Prénom: **Gwénaël**
 
  Entreprise: **WorldLine** \
- Résumé de la mission: Petite mission pour prendre en main l'environnement de travail: mettre à jour un petit script permettant d'afficher l'état des différents processus sur un serveur.
-
+Résumé de la mission : Mission de prise en main de l'environnement de travail consistant à mettre à jour un script permettant d'afficher l'état des différents processus sur un serveur.
  <h2>Semaine du 11/03 au 15/03</h2>
 
 
  <h3> Ce que j'ai fait:</h3>
 
  * Le lundi et mardi matin ont été consacrés à la configuration du poste de travail. J'ai dû installer et configurer des logiciels tels que Putty, MySQL Workbench et Eclipse. J'ai aussi pu prendre en main des outils utilisés par l'entreprise, comme Confluence et Jira.
- * Durant les premiers jours, l'objectif était pour moi de comprendre le fonctionnement et la caractéristique du produit TOM (Trade Order Managment) sur lequel je vais travailler. J'ai pour cela lu de la documentation sur le projet, et le Product Manager m'a fait une présentation détaillée du produit ainsi que de l'organisation de l'entreprise pour ce projet.
+ * Durant les premiers jours, mon objectif était de comprendre le fonctionnement et les caractéristiques du produit TOM (Trade Order Management) sur lequel je vais travailler. Pour cela, j'ai consulté la documentation relative au projet, et le Product Manager m'a fait une présentation détaillée du produit ainsi que de l'organisation de l'entreprise pour ce projet.
  * À partir de mercredi, j'ai pu commencer à travailler sur ma première mission, qui consiste à mettre à jour un service permettant d'afficher l'état des services sur un serveur. Voir [détail mission](#détail-mission).\
  Cette mission m'a permis de prendre en main OPS, un outil interne de **Worldline** qui permet de configurer et de déployer des services sur des serveurs.
 
@@ -26,12 +25,14 @@
 
  <h3> Difficultés rencontrés:</h3>
  
- * Le produit TOM est assez complexe et concerne un domaine pour lequel j'ai en core peu de connaissances (la finance). J'ai donc passé une partie de mon temps à lire de la documentation pour comprendre son fonctionnement et son utilité.
+ * Le produit TOM est assez complexe et concerne un domaine pour lequel j'ai encore peu de connaissances (la finance). J'ai donc passé une partie de mon temps à lire de la documentation pour comprendre son fonctionnement et son utilité.
 
  * Il m'a fallu un peu de temps pour comprendre comment le déploiment fonctionnait, en effet, lors du premier déploiment, j'ai eu différents problème concernant les chemins d'accès, que j'avais mal configuré.
 
  <h3> Programme pour la semaine prochaine:</h3>
 
+* Lundi sera consacré au déploiment du service sur tous les serveurs.
+* J'ai une réunion lundi pour en savoir plus sur ma prochaine mission.
 
 #### Détail Mission:
 
@@ -39,7 +40,7 @@
 >
 >![](./images/stat_serv_result.PNG)
 
-La modification demandée consiste à afficher des noms plus clairs (pour l'instant, seul le nom renvoyé lorsqu'on exécute "ps -fu" est affiché) et à afficher la date du dernier lancement du serveur.
+La modification demandée consiste à afficher des noms plus clairs (pour l'instant, seul le nom renvoyé lorsqu'on exécute "ps -f" est affiché) et à afficher la date du dernier lancement du serveur.
 
 Les informations nécessaires pour un service sont récupérées à partir d'un fichier CSV. On y récupère leur nom, l'heure de démarrage, l'heure d'arrêt, les jours de démarrage et les jours d'arrêt.
 
@@ -69,7 +70,7 @@ Entuite, on définie notre configuration en se basant sur le template de la conf
 Configuration:
 ![](./images/config_ops_monitoring_test.png)
 
-#### conclusion
+#### Conclusion
 Une fois le déploiment terminé, on peut essayer la commande qui donne le résultat suivant.  
 
 ![](./images/cop_stat_serv_result.PNG)  
