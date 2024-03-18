@@ -5,6 +5,7 @@
 
  Entreprise: **WorldLine** 
 
+<div style="text-align:justify;">
  <h2>Semaine du 11/03 au 15/03</h2>
  Résumé de la mission : Mission de prise en main de l'environnement de travail consistant à mettre à jour un script permettant d'afficher l'état des différents processus sur un serveur.
 
@@ -101,3 +102,4 @@ On déploie ensuite sur tous les serveurs et la mission est terminée.
  <h3> Programme pour la semaine prochaine:</h3>
 
 * 
+</div>
