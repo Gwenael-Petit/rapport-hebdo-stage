@@ -27,11 +27,11 @@ Résumé de la mission : Mission de prise en main de l'environnement de travail 
  
  * Le produit TOM est assez complexe et concerne un domaine pour lequel j'ai encore peu de connaissances (la finance). J'ai donc passé une partie de mon temps à lire de la documentation pour comprendre son fonctionnement et son utilité.
 
- * Il m'a fallu un peu de temps pour comprendre comment le déploiment fonctionnait, en effet, lors du premier déploiment, j'ai eu différents problème concernant les chemins d'accès, que j'avais mal configuré.
+ * Il m'a fallu un peu de temps pour comprendre comment le déploiement fonctionnait, en effet, lors du premier déploiement, j'ai eu différents problèmes concernant les chemins d'accès, que j'avais mal configuré.
 
  <h3> Programme pour la semaine prochaine:</h3>
 
-* Lundi sera consacré au déploiment du service sur tous les serveurs.
+* Lundi sera consacré au déploiement du service sur tous les serveurs.
 * J'ai une réunion lundi pour en savoir plus sur ma prochaine mission.
 
 #### Détail Mission:
@@ -40,7 +40,7 @@ Résumé de la mission : Mission de prise en main de l'environnement de travail 
 >
 >![](./images/stat_serv_result.PNG)
 
-La modification demandée consiste à afficher des noms plus clairs (pour l'instant, seul le nom renvoyé lorsqu'on exécute "ps -f" est affiché) et à afficher la date du dernier lancement du serveur.
+La modification demandée consiste à afficher des noms plus significatifs (pour l'instant, seul le nom renvoyé lorsqu'on exécute "ps -f" est affiché) et à afficher la date du dernier lancement du serveur.
 
 Les informations nécessaires pour un service sont récupérées à partir d'un fichier CSV. On y récupère leur nom, l'heure de démarrage, l'heure d'arrêt, les jours de démarrage et les jours d'arrêt.
 
@@ -53,7 +53,7 @@ Un script permettant de récupérer ces informations a déjà été développé 
 >
 
 ##### 1.
-La mise à jour du CSV consiste juste a rajouter une colonne et les réorganiser.
+La mise à jour du CSV consiste juste à rajouter une colonne et les réorganiser.
 
 ##### 2.
 Le fichier `utils` contenant plus de 300 fonctions, il serait trop long de toutes les renommer une par une, surtout qu'il suffit de leur ajouter un preffix `"cop_"`.
@@ -65,13 +65,13 @@ sed -i "s/^r/cop_r/g" utils
 ##### 3.
 La configuration du service sur OPS est la partie la plus complexe, puisque je n'avais jamais utilisé OPS avant.
 Il faut donc ajouter une ressource dans le module `"Monitoring"`, qu'on appelle `"monitoring-test"`, puis ajouter les serveurs sur lesquels on souhaite la déployer.
-Entuite, on définie notre configuration en se basant sur le template de la configuration faite par l'équipe qui a développé les scripts utilisés puis on adapte les variables. 
+Entuite, on définit notre configuration en se basant sur le template de la configuration faite par l'équipe qui a développé les scripts utilisés puis on adapte les variables. 
 
 Configuration:
 ![](./images/config_ops_monitoring_test.png)
 
 #### Conclusion
-Une fois le déploiment terminé, on peut essayer la commande qui donne le résultat suivant.  
+Une fois le déploiement terminé, on peut essayer la commande qui donne le résultat suivant.  
 
 ![](./images/cop_stat_serv_result.PNG)  
 
