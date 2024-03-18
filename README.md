@@ -1,7 +1,4 @@
-<div style="text-align:justify;">
-
-
-# Comptes-rendus hebdomadaires
+ # Comptes-rendus hebdomadaires
  
  Nom: **Petit** \
  Prénom: **Gwénaël**
@@ -104,6 +101,3 @@ On déploie ensuite sur tous les serveurs et la mission est terminée.
  <h3> Programme pour la semaine prochaine:</h3>
 
 * 
-
-
-</div>
