@@ -1,11 +1,15 @@
+<div style="text-align:justify;">
+
+
 # Comptes-rendus hebdomadaires
  
  Nom: **Petit** \
  Prénom: **Gwénaël**
 
- Entreprise: **WorldLine** \
-Résumé de la mission : Mission de prise en main de l'environnement de travail consistant à mettre à jour un script permettant d'afficher l'état des différents processus sur un serveur.
+ Entreprise: **WorldLine** 
+
  <h2>Semaine du 11/03 au 15/03</h2>
+ Résumé de la mission : Mission de prise en main de l'environnement de travail consistant à mettre à jour un script permettant d'afficher l'état des différents processus sur un serveur.
 
 
  <h3> Ce que j'ai fait:</h3>
@@ -23,7 +27,7 @@ Résumé de la mission : Mission de prise en main de l'environnement de travail 
 
  * Cette semaine était une semaine d'adaptation et au delà des compétences techniques, l'apprentissage concernait surtout la prise en main de l'environnement de travail et l'adapation à l'entreprise. J'ai par exemple participé à des réunions journalières avec mon équipe pour partager nos avancées.
 
- <h3> Difficultés rencontrés:</h3>
+ <h3> Difficultés rencontrées:</h3>
  
  * Le produit TOM est assez complexe et concerne un domaine pour lequel j'ai encore peu de connaissances (la finance). J'ai donc passé une partie de mon temps à lire de la documentation pour comprendre son fonctionnement et son utilité.
 
@@ -65,10 +69,11 @@ sed -i "s/^r/cop_r/g" utils
 ##### 3.
 La configuration du service sur OPS est la partie la plus complexe, puisque je n'avais jamais utilisé OPS avant.
 Il faut donc ajouter une ressource dans le module `"Monitoring"`, qu'on appelle `"monitoring-test"`, puis ajouter les serveurs sur lesquels on souhaite la déployer.
-Entuite, on définit notre configuration en se basant sur le template de la configuration faite par l'équipe qui a développé les scripts utilisés puis on adapte les variables. 
+Entuite, on définit notre configuration en se basant sur le template de la configuration faite par l'équipe qui a développé les scripts utilisés puis on adapte les variables comme dans la configuration ci-dessous. 
 
 Configuration:
 ![](./images/config_ops_monitoring_test.png)
+*configuartion du déploiement du service*
 
 #### Conclusion
 Une fois le déploiement terminé, on peut essayer la commande qui donne le résultat suivant.  
@@ -78,3 +83,27 @@ Une fois le déploiement terminé, on peut essayer la commande qui donne le rés
 Un service d'envoi de mails utilise celui que l'on vient de mettre à jour, il faut donc vérifier qu'il fonctionne toujours (c'est le cas).
 
 On déploie ensuite sur tous les serveurs et la mission est terminée.
+
+<h2>Semaine du 18/03 au 22/03</h2>
+ Résumé de la mission : 
+
+
+ <h3> Ce que j'ai fait:</h3>
+
+ * La semaine a commencé avec un prolongemetn de la semain précédente. Après avoir déploiyer la nouvelle version du service vu la semaine dernière, j'ai pu faire la même chose pour les services permettant de démarrer, arrêtrer ou redémarrer les processus lancés sur un serveur. Ces services faisant partis du même dépot gitlab, il a suffit de mettre à jour les chemins daccès pour ces services dans notre fichier `utils`. 
+
+ <h3> Ce que j'ai appris:</h3>
+
+ * 
+
+ <h3> Difficultés rencontrées:</h3>
+ 
+ * 
+
+
+ <h3> Programme pour la semaine prochaine:</h3>
+
+* 
+
+
+</div>
