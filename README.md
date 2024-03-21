@@ -8,10 +8,8 @@
 *******
 <h2>Table des matières</h2>  
 
- 1. [Semaine du 11/03 au 15/03](#)     
- 2. [Semaine du 18/03 au 22/03](#)
- 3. [Outils pour le Markdown](#tools)
- 4. [La syntaxe du Markdown](#syntax)
+ 1. [Semaine du 11/03 au 15/03](#semaine-du-1103-au-1503)     
+ 2. [Semaine du 18/03 au 22/03](#semaine-du-1803-au-2203)
 
 *******
 
@@ -91,11 +89,11 @@ Un service d'envoi de mails utilise celui que l'on vient de mettre à jour, il f
 
 On déploie ensuite sur tous les serveurs et la mission est terminée.
 
-<h2>Semaine du 18/03 au 22/03</h2>
+## Semaine du 18/03 au 22/03
  Résumé de la mission : Mettre en place un service d'archivage et de purge des ordres financiers le service existe, il faut le tester, le déployer et le configurer pour qu'il soit exécuté automatiquement.
 
 
- <h3> Ce que j'ai fait:</h3>
+### Ce que j'ai fait:
 
  * La semaine a commencé par un prolongement de la mission de la semaine précédente. Après avoir déployé la nouvelle version du service **stat_serv** la semaine dernière, j'ai pu effectuer la même opération pour les services permettant de démarrer, arrêter ou redémarrer les processus lancés sur un serveur. Ces services font partie du même dépôt GitLab et sont en réalité déjà déployés, mais non utilisés (nous avons déployé toute la branche 1.0 du dépôt). Il suffit donc de mettre à jour les chemins d'accès pour ces services dans notre fichier `utils` (voir le [détail de la mission](#détail-mission-1) de la semaine précédente).  
  <br>
@@ -111,22 +109,22 @@ On déploie ensuite sur tous les serveurs et la mission est terminée.
  <br>
  J'ai ensuite testé le programme pour vérifier s'il fonctionnait sans bug et donnait le résultat attendu avant de le déployer. Cela m'a aussi permis de comprendre le fonctionnement de certains paramètres nécessaires pour le déploiement. J'ai d'abord testé le service d'historisation sans purge pour éviter la suppression de données non sauvegardées en cas d'échec (sur environnement de développement, pour éviter de réintroduire les données après chaque test). Tout fonctionnait, donc j'ai ensuite testé avec la purge et obtenu le résultat suivant.
 
- >>
 
 
 
- <h3> Ce que j'ai appris:</h3>
+
+### Ce que j'ai appris:
 
  * j'ai dû analyser le code existant afin de l'améliorer, ce que je n'ai pas l'habitude de faire pour un code qui n'est pas le mien. Cela m'a également poussé à programmer en C, langage que je n'avais pas utilisé depuis un certain temps.
 
  * Analyser un code complexe dans le cadre des tests pour l'archivage et la purge des ordres.
 
- <h3> Difficultés rencontrées:</h3>
+### Difficultés rencontrées:
  
  * 
 
 
- <h3> Programme pour la semaine prochaine:</h3>
+### Programme pour la semaine prochaine:</h3>
 
 * 
 
