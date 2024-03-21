@@ -5,18 +5,28 @@
 
  Entreprise: **WorldLine** 
 
- <h2>Semaine du 11/03 au 15/03</h2>
+*******
+<h2>Table des matières</h2>  
+
+ 1. [Semaine du 11/03 au 15/03](#)     
+ 2. [Semaine du 18/03 au 22/03](#)
+ 3. [Outils pour le Markdown](#tools)
+ 4. [La syntaxe du Markdown](#syntax)
+
+*******
+
+ ## Semaine du 11/03 au 15/03
  Résumé de la mission : Mission de prise en main de l'environnement de travail consistant à mettre à jour un script permettant d'afficher l'état des différents processus sur un serveur.
 
 
- <h3> Ce que j'ai fait:</h3>
+ ### Ce que j'ai fait:
 
  * Le lundi et mardi matin ont été consacrés à la configuration du poste de travail. J'ai dû installer et configurer des logiciels tels que Putty, MySQL Workbench et Eclipse. J'ai aussi pu prendre en main des outils utilisés par l'entreprise, comme Confluence et Jira.
  * Durant les premiers jours, mon objectif était de comprendre le fonctionnement et les caractéristiques du produit TOM (Trade Order Management) sur lequel je vais travailler. Pour cela, j'ai consulté la documentation relative au projet, et le Product Manager m'a fait une présentation détaillée du produit ainsi que de l'organisation de l'entreprise pour ce projet.
  * À partir de mercredi, j'ai pu commencer à travailler sur ma première mission, qui consiste à mettre à jour un service permettant d'afficher l'état des services sur un serveur. Voir [détail mission](#détail-mission-1).\
  Cette mission m'a permis de prendre en main OPS, un outil interne de **Worldline** qui permet de configurer et de déployer des services sur des serveurs.
 
- <h3> Ce que j'ai appris:</h3>
+ ### Ce que j'ai appris:
 
  * J'ai découvert plus en détail le fonctionnement d'une équipe informatique au sein d'une entreprise de cette envergure. Le projet rassemble plusieurs équipes, chacune comprenant un certain nombre de collaborateurs, ce qui nécessite une communication efficace, prenant ainsi plus de temps que je ne l'imaginais dans le travail d'un développeur.
 
@@ -24,13 +34,13 @@
 
  * Cette semaine était une semaine d'adaptation et au delà des compétences techniques, l'apprentissage concernait surtout la prise en main de l'environnement de travail et l'adapation à l'entreprise. J'ai par exemple participé à des réunions journalières avec mon équipe pour partager nos avancées.
 
- <h3> Difficultés rencontrées:</h3>
+ ### Difficultés rencontrées:
  
  * Le produit TOM est assez complexe et concerne un domaine pour lequel j'ai encore peu de connaissances (la finance). J'ai donc passé une partie de mon temps à lire de la documentation pour comprendre son fonctionnement et son utilité.
 
  * Il m'a fallu un peu de temps pour comprendre comment le déploiement fonctionnait, en effet, lors du premier déploiement, j'ai eu différents problèmes concernant les chemins d'accès, que j'avais mal configuré.
 
- <h3> Programme pour la semaine prochaine:</h3>
+ ### Programme pour la semaine prochaine:
 
 * Lundi sera consacré au déploiement du service sur tous les serveurs.
 * J'ai une réunion lundi pour en savoir plus sur ma prochaine mission.
@@ -82,7 +92,7 @@ Un service d'envoi de mails utilise celui que l'on vient de mettre à jour, il f
 On déploie ensuite sur tous les serveurs et la mission est terminée.
 
 <h2>Semaine du 18/03 au 22/03</h2>
- Résumé de la mission : 
+ Résumé de la mission : Mettre en place un service d'archivage et de purge des ordres financiers le service existe, il faut le tester, le déployer et le configurer pour qu'il soit exécuté automatiquement.
 
 
  <h3> Ce que j'ai fait:</h3>
@@ -91,21 +101,25 @@ On déploie ensuite sur tous les serveurs et la mission est terminée.
  <br>
  Lors du test des différentes commandes, j'ai remarqué que les commandes `restart_all` et `restart_all_force` ne fonctionnaient pas. Leurs scripts respectifs n'avaient pas été adaptés au nouveau format du fichier CSV, modifié la semaine dernière. Il a fallu ajuster les commandes `cut` qui ne renvoyaient plus les bonnes colonnes du fichier.  
  <br>
- Cependant, un membre de l'équipe m'a fait remarqué que les deux script étaient très similaires, il m'a donc suggéré de faire un script commun pour les deux services. J'ai donc créé une fonction `restart_all_process` qui prend en paramêtre un booléen *force*. Cela permet d'avoir un code plus concis et d'éviter la redondance.
+ Cependant, un membre de l'équipe m'a fait remarquer que les deux scripts étaient très similaires. Il m'a donc suggéré de créer un script commun pour les deux services. J'ai donc développé une fonction `restart_all_process` prenant un booléen ***force*** en paramètre. Cela permet d'avoir un code plus concis et d'éviter la redondance.
 
- * J'ai aussi eu une réunion Lundi pour découvrir ma seconde mission qui concerne l'historisation des ordres finaciers et la pruge des bases concernées.
- Cela permet de diminuer le volume de données sur les bases ou l'on effectue souvent des opéraztions et donc d'accélerer les traitements.   
- Pour cela, on utilise des scripts déjà déployés sur les serveurs, mais inutilisés. Il faut paramétrer une execution automatique des ces scripts de manière à ce qu'ils s'exécutent régulièrement en dehors des heures d'activités.  
+ * J'ai eu une réunion lundi pour découvrir ma seconde mission, qui concerne l'historisation des ordres financiers et la purge des bases de données. Cela permet de réduire le volume de données sur les bases où des opérations fréquentes sont effectuées, afin d'accélérer les traitements.   
+ Pour cela, il y a des scripts déjà déployés sur les serveurs, mais inutilisés. Il est nécessaire de paramétrer une exécution automatique de ces scripts afin qu'ils s'exécutent régulièrement en dehors des heures d'activité. 
  -> [Détail de la mission](#détail-mission-2)  
  <br>
  Avant de commencer la mission, j'ai dû lire le code existant pour comprendre le fonctionnement du service. Le service ayant été développé il y a un certain temps mais non utilisé, j'ai vérifié que le schéma des tables de destination correspondait à celui des tables sources. J'ai corrigé quelques différences de type de colonnes (ex: date et datetime).  
  <br>
- J'ai ensuite testé le programme pour vérifier s'il fonctionnait sans bug et donnait le résultat attendu avant de le déployer. Cela m'a aussi permis de comprendre le fonctionnement de certains paramètres nécessaires pour le déploiement. J'ai d'abord testé le service d'historisation sans purge pour éviter la suppression de données non sauvegardées en cas d'échec (sur environnement de développement, pour éviter de réintroduire les données après chaque test). Tout fonctionnait, donc j'ai ensuite testé avec la purge.
+ J'ai ensuite testé le programme pour vérifier s'il fonctionnait sans bug et donnait le résultat attendu avant de le déployer. Cela m'a aussi permis de comprendre le fonctionnement de certains paramètres nécessaires pour le déploiement. J'ai d'abord testé le service d'historisation sans purge pour éviter la suppression de données non sauvegardées en cas d'échec (sur environnement de développement, pour éviter de réintroduire les données après chaque test). Tout fonctionnait, donc j'ai ensuite testé avec la purge et obtenu le résultat suivant.
+
+ >>
+
 
 
  <h3> Ce que j'ai appris:</h3>
 
- * 
+ * j'ai dû analyser le code existant afin de l'améliorer, ce que je n'ai pas l'habitude de faire pour un code qui n'est pas le mien. Cela m'a également poussé à programmer en C, langage que je n'avais pas utilisé depuis un certain temps.
+
+ * Analyser un code complexe dans le cadre des tests pour l'archivage et la purge des ordres.
 
  <h3> Difficultés rencontrées:</h3>
  
