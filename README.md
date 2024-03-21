@@ -13,7 +13,7 @@
 
  * Le lundi et mardi matin ont été consacrés à la configuration du poste de travail. J'ai dû installer et configurer des logiciels tels que Putty, MySQL Workbench et Eclipse. J'ai aussi pu prendre en main des outils utilisés par l'entreprise, comme Confluence et Jira.
  * Durant les premiers jours, mon objectif était de comprendre le fonctionnement et les caractéristiques du produit TOM (Trade Order Management) sur lequel je vais travailler. Pour cela, j'ai consulté la documentation relative au projet, et le Product Manager m'a fait une présentation détaillée du produit ainsi que de l'organisation de l'entreprise pour ce projet.
- * À partir de mercredi, j'ai pu commencer à travailler sur ma première mission, qui consiste à mettre à jour un service permettant d'afficher l'état des services sur un serveur. Voir [détail mission](#détail-mission).\
+ * À partir de mercredi, j'ai pu commencer à travailler sur ma première mission, qui consiste à mettre à jour un service permettant d'afficher l'état des services sur un serveur. Voir [détail mission](#détail-mission-1).\
  Cette mission m'a permis de prendre en main OPS, un outil interne de **Worldline** qui permet de configurer et de déployer des services sur des serveurs.
 
  <h3> Ce que j'ai appris:</h3>
@@ -35,7 +35,7 @@
 * Lundi sera consacré au déploiement du service sur tous les serveurs.
 * J'ai une réunion lundi pour en savoir plus sur ma prochaine mission.
 
-#### Détail Mission:
+#### Détail Mission 1:
 
 > Résultat actuel du script actuel:
 >
@@ -87,7 +87,21 @@ On déploie ensuite sur tous les serveurs et la mission est terminée.
 
  <h3> Ce que j'ai fait:</h3>
 
- * La semaine a commencé avec un prolongemetn de la semain précédente. Après avoir déploiyer la nouvelle version du service vu la semaine dernière, j'ai pu faire la même chose pour les services permettant de démarrer, arrêtrer ou redémarrer les processus lancés sur un serveur. Ces services faisant partis du même dépot gitlab, il a suffit de mettre à jour les chemins daccès pour ces services dans notre fichier `utils`. 
+ * La semaine a commencé par un prolongement de la mission de la semaine précédente. Après avoir déployé la nouvelle version du service **stat_serv** la semaine dernière, j'ai pu effectuer la même opération pour les services permettant de démarrer, arrêter ou redémarrer les processus lancés sur un serveur. Ces services font partie du même dépôt GitLab et sont en réalité déjà déployés, mais non utilisés (nous avons déployé toute la branche 1.0 du dépôt). Il suffit donc de mettre à jour les chemins d'accès pour ces services dans notre fichier `utils` (voir le [détail de la mission](#détail-mission-1) de la semaine précédente).  
+ <br>
+ Lors du test des différentes commandes, j'ai remarqué que les commandes `restart_all` et `restart_all_force` ne fonctionnaient pas. Leurs scripts respectifs n'avaient pas été adaptés au nouveau format du fichier CSV, modifié la semaine dernière. Il a fallu ajuster les commandes `cut` qui ne renvoyaient plus les bonnes colonnes du fichier.  
+ <br>
+ Cependant, un membre de l'équipe m'a fait remarqué que les deux script étaient très similaires, il m'a donc suggéré de faire un script commun pour les deux services. J'ai donc créé une fonction `restart_all_process` qui prend en paramêtre un booléen *force*. Cela permet d'avoir un code plus concis et d'éviter la redondance.
+
+ * J'ai aussi eu une réunion Lundi pour découvrir ma seconde mission qui concerne l'historisation des ordres finaciers et la pruge des bases concernées.
+ Cela permet de diminuer le volume de données sur les bases ou l'on effectue souvent des opéraztions et donc d'accélerer les traitements.   
+ Pour cela, on utilise des scripts déjà déployés sur les serveurs, mais inutilisés. Il faut paramétrer une execution automatique des ces scripts de manière à ce qu'ils s'exécutent régulièrement en dehors des heures d'activités.  
+ -> [Détail de la mission](#détail-mission-2)  
+ <br>
+ Avant de commencer la mission, j'ai dû lire le code existant pour comprendre le fonctionnement du service. Le service ayant été développé il y a un certain temps mais non utilisé, j'ai vérifié que le schéma des tables de destination correspondait à celui des tables sources. J'ai corrigé quelques différences de type de colonnes (ex: date et datetime).  
+ <br>
+ J'ai ensuite testé le programme pour vérifier s'il fonctionnait sans bug et donnait le résultat attendu avant de le déployer. Cela m'a aussi permis de comprendre le fonctionnement de certains paramètres nécessaires pour le déploiement. J'ai d'abord testé le service d'historisation sans purge pour éviter la suppression de données non sauvegardées en cas d'échec (sur environnement de développement, pour éviter de réintroduire les données après chaque test). Tout fonctionnait, donc j'ai ensuite testé avec la purge.
+
 
  <h3> Ce que j'ai appris:</h3>
 
@@ -101,3 +115,43 @@ On déploie ensuite sur tous les serveurs et la mission est terminée.
  <h3> Programme pour la semaine prochaine:</h3>
 
 * 
+
+#### Détail Mission 2
+
+>L'historisation et la purge de tables permet de libérer de l'espace dans les bases de données utilisés par les services afin de maintenir un niveau de performances élévé, tout en gardant les anciennes donées sur d'autre tables, afin de respecter les lois conernant l'accés au données (7 ans).
+>
+> L'objectif est d'archiver tous les ordres financiers qui n'ont reçu aucune modification depuis un nombre de jour défini dans la configuration, dans notre cas, ce sera 1 an, donc 365.
+>
+> L'aboressence déployée est la suivante:
+>```
+>purge
+>   ├── logs
+>   └── security
+>   ├── conf
+>   │   ├── classpath.txt
+>   │   ├── log4j.properties
+>   │   ├── maven
+>   │   ├── pom.xml
+>   │   ├── securityOrderCleanAndExpire.ini
+>   │   ├── target
+>   │   └── wts_archive.conf
+>   ├── etc
+>   │   ├── securityOrderClean.ksh
+>   │   └── securityOrderExpire.ksh
+>   └── properties
+>       ├── oms
+>       │   └── common
+>       │       └── services
+>       │           └── WTSServicesLauncher.properties
+>       └── spring
+>           └── applicationContext-order.xml
+>```
+> Le fichier `securityOrderClean.ksh` contient le srcipt principal du service et utilise le fichier de configuration `securityOrderCleanAndExpire.ini`
+>
+> Le fichier de configuration définie la durée le nombre de jour necessaire avant la purge d'un ordre selon son statut. Dans notre cas, on purge tous les odres au bout d'un an, on met donc toutes les valeur à 365 (on mettra ces valeurs à 207 pour nos tests, nombre de jours écoulés depuis les premiers ordres effectués).
+>
+>![](./images/config_delay_histo.PNG)
+>
+>
+>
+
