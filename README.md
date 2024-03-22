@@ -109,9 +109,14 @@ On déploie ensuite sur tous les serveurs et la mission est terminée.
  <br>
  J'ai ensuite testé le programme pour vérifier s'il fonctionnait sans bug et donnait le résultat attendu avant de le déployer. Cela m'a aussi permis de comprendre le fonctionnement de certains paramètres nécessaires pour le déploiement. J'ai d'abord testé le service d'historisation sans purge pour éviter la suppression de données non sauvegardées en cas d'échec (sur environnement de développement, pour éviter de réintroduire les données après chaque test). Tout fonctionnait, donc j'ai ensuite testé avec la purge et obtenu le résultat suivant.
 
-
-
-
+> ![](./images/count_before_purge.PNG)
+> *Table des ordres, avant purge:*
+> 
+> ![](./images/count_after_purge.PNG)
+> *Table des ordres, après purge:*
+>
+>![](./images/count_odres_histo.PNG)
+> *Table des ordres archivés, après archivage:*
 
 ### Ce que j'ai appris:
 
@@ -121,7 +126,7 @@ On déploie ensuite sur tous les serveurs et la mission est terminée.
 
 ### Difficultés rencontrées:
  
- * 
+ * Le service d'historisation est plutôt complexe. Il s'agit d'un service développé en Spring, exécuté via un script en C. Le code est réparti dans plusieurs dépôts GitLab et gère 2 bases de données distinctes. Avant de le configurer, j'ai dû consacrer beaucoup de temps à comprendre en détail son fonctionnement.
 
 
 ### Programme pour la semaine prochaine:</h3>
@@ -130,7 +135,7 @@ On déploie ensuite sur tous les serveurs et la mission est terminée.
 
 #### Détail Mission 2
 
->L'historisation et la purge de tables permet de libérer de l'espace dans les bases de données utilisés par les services afin de maintenir un niveau de performances élévé, tout en gardant les anciennes donées sur d'autre tables, afin de respecter les lois conernant l'accés au données (7 ans).
+>L'historisation et la purge de tables permet de libérer de l'espace dans les bases de données utilisés par les services afin de maintenir un niveau de performances élévé, tout en gardant les anciennes donées sur d'autre tables, afin de respecter les lois conernant l'accés au données (pendant 7 ans).
 >
 > L'objectif est d'archiver tous les ordres financiers qui n'ont reçu aucune modification depuis un nombre de jour défini dans la configuration, dans notre cas, ce sera 1 an, donc 365.
 >
@@ -163,7 +168,5 @@ On déploie ensuite sur tous les serveurs et la mission est terminée.
 > Le fichier de configuration définie la durée le nombre de jour necessaire avant la purge d'un ordre selon son statut. Dans notre cas, on purge tous les odres au bout d'un an, on met donc toutes les valeur à 365 (on mettra ces valeurs à 207 pour nos tests, nombre de jours écoulés depuis les premiers ordres effectués).
 >
 >![](./images/config_delay_histo.PNG)
->
->
 >
 
