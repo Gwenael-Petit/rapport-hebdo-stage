@@ -109,6 +109,7 @@ On déploie ensuite sur tous les serveurs et la mission est terminée.
  <br>
  J'ai ensuite testé le programme pour vérifier s'il fonctionnait sans bug et donnait le résultat attendu avant de le déployer. Cela m'a aussi permis de comprendre le fonctionnement de certains paramètres nécessaires pour le déploiement. J'ai d'abord testé le service d'historisation sans purge pour éviter la suppression de données non sauvegardées en cas d'échec (sur environnement de développement, pour éviter de réintroduire les données après chaque test). Tout fonctionnait, donc j'ai ensuite testé avec la purge et obtenu le résultat suivant.
 
+>-----
 > ![](./images/count_before_purge.PNG)
 > *Table des ordres, avant purge:*
 > 
