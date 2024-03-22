@@ -1,4 +1,4 @@
-<div style="text-align:justify;">
+<!--<div style="text-align:justify;">-->
 
 # Comptes-rendus hebdomadaires
  
@@ -171,4 +171,4 @@ On déploie ensuite sur tous les serveurs et la mission est terminée.
 >![](./images/config_delay_histo.PNG)
 >
 
-</div>
+<!--</div>-->
