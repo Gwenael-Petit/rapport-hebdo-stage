@@ -1,3 +1,5 @@
+<div style="text-align:justify;">
+
 # Comptes-rendus hebdomadaires
  
  Nom: **Petit** \
@@ -89,24 +91,22 @@ Un service d'envoi de mails utilise celui que l'on vient de mettre à jour, il f
 
 On déploie ensuite sur tous les serveurs et la mission est terminée.
 
+---
 ## Semaine du 18/03 au 22/03
  Résumé de la mission : Mettre en place un service d'archivage et de purge des ordres financiers le service existe, il faut le tester, le déployer et le configurer pour qu'il soit exécuté automatiquement.
 
 
 ### Ce que j'ai fait:
 
- * La semaine a commencé par un prolongement de la mission de la semaine précédente. Après avoir déployé la nouvelle version du service **stat_serv** la semaine dernière, j'ai pu effectuer la même opération pour les services permettant de démarrer, arrêter ou redémarrer les processus lancés sur un serveur. Ces services font partie du même dépôt GitLab et sont en réalité déjà déployés, mais non utilisés (nous avons déployé toute la branche 1.0 du dépôt). Il suffit donc de mettre à jour les chemins d'accès pour ces services dans notre fichier `utils` (voir le [détail de la mission](#détail-mission-1) de la semaine précédente).  
- <br>
- Lors du test des différentes commandes, j'ai remarqué que les commandes `restart_all` et `restart_all_force` ne fonctionnaient pas. Leurs scripts respectifs n'avaient pas été adaptés au nouveau format du fichier CSV, modifié la semaine dernière. Il a fallu ajuster les commandes `cut` qui ne renvoyaient plus les bonnes colonnes du fichier.  
- <br>
+ * La semaine a commencé par un prolongement de la mission de la semaine précédente. Après avoir déployé la nouvelle version du service **stat_serv** la semaine dernière, j'ai pu effectuer la même opération pour les services permettant de démarrer, arrêter ou redémarrer les processus lancés sur un serveur. Ces services font partie du même dépôt GitLab et sont en réalité déjà déployés, mais non utilisés (nous avons déployé toute la branche 1.0 du dépôt). Il suffit donc de mettre à jour les chemins d'accès pour ces services dans notre fichier `utils` (voir le [détail de la mission](#détail-mission-1) de la semaine précédente).<br>
+ Lors du test des différentes commandes, j'ai remarqué que les commandes `restart_all` et `restart_all_force` ne fonctionnaient pas. Leurs scripts respectifs n'avaient pas été adaptés au nouveau format du fichier CSV, modifié la semaine dernière. Il a fallu ajuster les commandes `cut` qui ne renvoyaient plus les bonnes colonnes du fichier.<br>
  Cependant, un membre de l'équipe m'a fait remarquer que les deux scripts étaient très similaires. Il m'a donc suggéré de créer un script commun pour les deux services. J'ai donc développé une fonction `restart_all_process` prenant un booléen ***force*** en paramètre. Cela permet d'avoir un code plus concis et d'éviter la redondance.
+<br>
 
  * J'ai eu une réunion lundi pour découvrir ma seconde mission, qui concerne l'historisation des ordres financiers et la purge des bases de données. Cela permet de réduire le volume de données sur les bases où des opérations fréquentes sont effectuées, afin d'accélérer les traitements.   
  Pour cela, il y a des scripts déjà déployés sur les serveurs, mais inutilisés. Il est nécessaire de paramétrer une exécution automatique de ces scripts afin qu'ils s'exécutent régulièrement en dehors des heures d'activité. 
- -> [Détail de la mission](#détail-mission-2)  
- <br>
- Avant de commencer la mission, j'ai dû lire le code existant pour comprendre le fonctionnement du service. Le service ayant été développé il y a un certain temps mais non utilisé, j'ai vérifié que le schéma des tables de destination correspondait à celui des tables sources. J'ai corrigé quelques différences de type de colonnes (ex: date et datetime).  
- <br>
+ -> [Détail de la mission](#détail-mission-2)  <br>
+ Avant de commencer la mission, j'ai dû lire le code existant pour comprendre le fonctionnement du service. Le service ayant été développé il y a un certain temps mais non utilisé, j'ai vérifié que le schéma des tables de destination correspondait à celui des tables sources. J'ai corrigé quelques différences de type de colonnes (ex: date et datetime).  <br>
  J'ai ensuite testé le programme pour vérifier s'il fonctionnait sans bug et donnait le résultat attendu avant de le déployer. Cela m'a aussi permis de comprendre le fonctionnement de certains paramètres nécessaires pour le déploiement. J'ai d'abord testé le service d'historisation sans purge pour éviter la suppression de données non sauvegardées en cas d'échec (sur environnement de développement, pour éviter de réintroduire les données après chaque test). Tout fonctionnait, donc j'ai ensuite testé avec la purge et obtenu le résultat suivant.
 
 >-----
@@ -171,3 +171,4 @@ On déploie ensuite sur tous les serveurs et la mission est terminée.
 >![](./images/config_delay_histo.PNG)
 >
 
+</div>
