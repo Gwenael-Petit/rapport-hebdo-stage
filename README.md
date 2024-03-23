@@ -132,7 +132,7 @@ On déploie ensuite sur tous les serveurs et la mission est terminée.
 
 ### Programme pour la semaine prochaine:</h3>
 
-* 
+* Une nouvelle mission va m'être confiée. Elle conernera le déclenchement d'une alarme en cas d'absence d'odre envoyé sur le système pendant un temps définie, ce qui pourrait indiquer un problème.
 
 #### Détail Mission 2
 
